@@ -1,0 +1,12 @@
+{% extends ('::base.html.twig') %}
+
+{% block title %}{{ parent() }} - Liste des questions{% endblock %}
+
+{% block body %}
+    <ul>
+        {% for question in questions %}
+            <li>{{ question.name }} - {{ question.level }} - {{ question.theme.name }} <a href="{{ path('moneydrop_front_remove_question', { 'id': question.id }) }}">Supprimer</a></li>
+        {% endfor %}
+    </ul>
+    <button><a href="{{ path('moneydrop_front_parameters') }}">Retour au menu</a></button>
+{% endblock %}

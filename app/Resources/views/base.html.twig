@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}MoneyDrop{% endblock %}</title>
+        {% stylesheets 'bundles/moneydropfront/css/*' filter='cssrewrite' %}
+            <link href="{{ asset_url }}" rel="stylesheet">
+        {% endstylesheets %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        {% block header %}
+            {% include "MoneydropFrontBundle:Includes:Default/header.html.twig" %}
+        {% endblock %}
+        {% block body %}
+            {% include "MoneydropFrontBundle:Includes/Default:body.html.twig" %}
+        {% endblock %}
+        {% block footer %}
+            {% include "MoneydropFrontBundle:Includes:Default/footer.html.twig" %}
+        {% endblock %}
+        {% javascripts 'bundles/moneydropfront/js/*' %}
+            <script src=" {{ asset_url }}"></script>
+        {% endjavascripts %}
+    </body>
+</html>

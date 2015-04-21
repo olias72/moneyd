@@ -1,0 +1,4 @@
+services:
+#    moneydrop_front.example:
+#        class: Moneydrop\FrontBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

@@ -1,0 +1,43 @@
+moneydrop_front_homepage:
+    path:     /
+    defaults: { _controller: MoneydropFrontBundle:Default:index }
+
+moneydrop_front_game:
+    path:     /game
+    defaults: { _controller: MoneydropFrontBundle:Theme:index }
+
+moneydrop_front_history:
+    path:     /history
+    defaults: { _controller: MoneydropFrontBundle:Default:history }
+
+moneydrop_front_parameters:
+    path:     /parameters
+    defaults: { _controller: MoneydropFrontBundle:Default:parameters }
+
+moneydrop_front_list_parameters:
+    path:     /parameters/list
+    defaults: { _controller: MoneydropFrontBundle:Default:parametersList }
+
+moneydrop_front_success:
+    path:     /success
+    defaults: { _controller: MoneydropFrontBundle:Default:success }
+
+moneydrop_front_add_theme:
+    path:     /theme/add
+    defaults: { _controller: MoneydropFrontBundle:Theme:add }
+
+moneydrop_front_list_theme:
+    path:     /theme/list
+    defaults: { _controller: MoneydropFrontBundle:Theme:list }
+
+moneydrop_front_add_question:
+    path:     /question/add
+    defaults: { _controller: MoneydropFrontBundle:Question:add }
+
+moneydrop_front_list_question:
+    path:     /question/list
+    defaults: { _controller: MoneydropFrontBundle:Question:list }
+
+moneydrop_front_remove_question:
+    path:     /question/remove/{id}
+    defaults: { _controller: MoneydropFrontBundle:Question:remove }

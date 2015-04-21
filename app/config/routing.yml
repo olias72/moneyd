@@ -1,0 +1,10 @@
+moneydrop_back:
+    resource: "@MoneydropBackBundle/Resources/config/routing.yml"
+    prefix:   /back
+
+moneydrop_front:
+    resource: "@MoneydropFrontBundle/Resources/config/routing.yml"
+    prefix:   /
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"

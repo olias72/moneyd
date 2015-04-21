@@ -1,0 +1,12 @@
+{% extends ('::base.html.twig') %}
+{% block title %}{{ parent() }} - Liste des thèmes{% endblock %}
+
+{% block body %}
+    <ul>
+        {% for theme in themes %}
+            <li>{{ theme.name }}</li>
+        {% endfor %}
+    </ul>
+    <button><a href="{{ path('moneydrop_front_parameters') }}">Retour au menu</a></button>
+{% endblock %}
+

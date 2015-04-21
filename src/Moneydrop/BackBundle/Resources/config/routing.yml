@@ -1,0 +1,3 @@
+moneydrop_back_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: MoneydropBackBundle:Default:index }

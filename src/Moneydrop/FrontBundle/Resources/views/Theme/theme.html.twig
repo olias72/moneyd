@@ -1,0 +1,21 @@
+{% extends ('::base.html.twig') %}
+
+{% block title %}{{ parent() }} - choix du thème{% endblock %}
+
+{% block body %}
+    <div class="container well">
+        <h2>Choisissez un thème</h2>
+        <form class=" well form-horizontal col-lg-6" role="form" method="post" action="mon">
+            <div class="radio">
+                <label><input name="theme" type="radio" value="{{ theme1.name }}">{{ theme1.name }}</label>
+            </div>
+            <div class="radio">
+                <label><input name="theme" type="radio" value="{{ theme2.name }}">{{ theme2.name }}</label>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary pull-right" type="submit">Valider</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}
+

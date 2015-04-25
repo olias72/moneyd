@@ -20,6 +20,9 @@
                     <td><a href="{{ path('moneydrop_front_remove_question', { 'id': question.id }) }}">Supprimer</a></td>
                 </tr>
             {% endfor %}
+                <tr>
+                    <td><a href="{{ path('moneydrop_front_add_question') }}">Ajouter une question</a></td>
+                </tr>
         </table>
     </div>
     <button><a href="{{ path('moneydrop_front_parameters') }}">Retour au menu</a></button>

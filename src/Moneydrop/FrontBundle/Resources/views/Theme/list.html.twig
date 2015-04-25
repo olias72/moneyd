@@ -6,6 +6,7 @@
         {% for theme in themes %}
             <li>{{ theme.name }}</li>
         {% endfor %}
+            <li><a href="{{ path('moneydrop_front_add_theme') }}">Ajouter un thème</a></li>
     </ul>
     <button><a href="{{ path('moneydrop_front_parameters') }}">Retour au menu</a></button>
 {% endblock %}

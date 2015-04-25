@@ -2,6 +2,7 @@
 
 namespace Moneydrop\FrontBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -39,7 +40,17 @@ class Question
      * @ORM\ManyToOne(targetEntity="Theme", inversedBy="questions")
      * @ORM\JoinColumn(name="theme_id", referencedColumnName="id")
      */
-    protected $theme;
+    private $theme;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Response", mappedBy="question")
+     */
+    private $responses;
+
+    public function __construct()
+    {
+        $this->rsponses = new ArrayCollection();
+    }
 
     /**
      * Get id
@@ -116,5 +127,38 @@ class Question
     public function getTheme()
     {
         return $this->theme;
+    }
+
+    /**
+     * Add responses
+     *
+     * @param \Moneydrop\FrontBundle\Entity\Response $responses
+     * @return Question
+     */
+    public function addResponse(\Moneydrop\FrontBundle\Entity\Response $responses)
+    {
+        $this->responses[] = $responses;
+
+        return $this;
+    }
+
+    /**
+     * Remove responses
+     *
+     * @param \Moneydrop\FrontBundle\Entity\Response $responses
+     */
+    public function removeResponse(\Moneydrop\FrontBundle\Entity\Response $responses)
+    {
+        $this->responses->removeElement($responses);
+    }
+
+    /**
+     * Get responses
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getResponses()
+    {
+        return $this->responses;
     }
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="1723015096">
+  <component name="DataSourceManagerImpl" format="xml" hash="992050264">
     <data-source source="LOCAL" name="MySQL - moneydrop@localhost" uuid="eaf6e6dd-4011-4c86-8aac-aeb7bfccf2dc">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>

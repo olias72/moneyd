@@ -42,7 +42,16 @@
       <column name="theme_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <primary-key name="PRIMARY" columns="id"/>
       <foreign-key name="FK_4F812B1859027487" columns="theme_id" ref-table="theme" ref-schema="" ref-catalog="moneydrop" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="FK_C70D69AD1E27F6BF" table="response" schema="" catalog="moneydrop" columns="question_id"/>
       <index name="IDX_4F812B1859027487" unique="false" columns="theme_id"/>
+    </table>
+    <table name="response" schema="" catalog="moneydrop" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="question_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="name" sqlType="VARCHAR" precision="30" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_C70D69AD1E27F6BF" columns="question_id" ref-table="question" ref-schema="" ref-catalog="moneydrop" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="IDX_C70D69AD1E27F6BF" unique="false" columns="question_id"/>
     </table>
     <table name="theme" schema="" catalog="moneydrop" type="TABLE">
       <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>

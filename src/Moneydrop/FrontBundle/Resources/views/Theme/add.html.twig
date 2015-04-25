@@ -3,5 +3,7 @@
 {% block title %}{{ parent() }} - Ajout d'un thème{% endblock %}
 
 {% block body %}
-    {{ form(form) }}
+    <div class="container well">
+        {{ form(form) }}
+    </div>
 {% endblock %}

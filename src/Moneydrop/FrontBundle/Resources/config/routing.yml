@@ -41,3 +41,5 @@ moneydrop_front_list_question:
 moneydrop_front_remove_question:
     path:     /question/remove/{id}
     defaults: { _controller: MoneydropFrontBundle:Question:remove }
+    requirements:
+      id: \d{1}

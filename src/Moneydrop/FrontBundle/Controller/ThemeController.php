@@ -22,7 +22,7 @@ class ThemeController extends Controller
         $theme1 = $theme[0];
         $theme2 = $theme[1];
 
-        return $this->render('MoneydropFrontBundle:Theme:theme.html.twig', array('theme1' => $theme1, 'theme2' => $theme2));
+        return $this->render('MoneydropFrontBundle:Theme:index.html.twig', array('theme1' => $theme1, 'theme2' => $theme2));
     }
 
     public function addAction(Request $request)

@@ -3,10 +3,24 @@
 {% block title %}{{ parent() }} - Liste des questions{% endblock %}
 
 {% block body %}
-    <ul>
-        {% for question in questions %}
-            <li>{{ question.name }} - {{ question.level }} - {{ question.theme.name }} <a href="{{ path('moneydrop_front_remove_question', { 'id': question.id }) }}">Supprimer</a></li>
-        {% endfor %}
-    </ul>
+    <div class="container well">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Libellé</th>
+                    <th>Niveau</th>
+                    <th>Thème</th>
+                </tr>
+            </thead>
+            {% for question in questions %}
+                <tr>
+                    <td>{{ question.name }}</td>
+                    <td>{{ question.level }}</td>
+                    <td>{{ question.theme.name }}</td>
+                    <td><a href="{{ path('moneydrop_front_remove_question', { 'id': question.id }) }}">Supprimer</a></td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
     <button><a href="{{ path('moneydrop_front_parameters') }}">Retour au menu</a></button>
 {% endblock %}

@@ -1,10 +1,11 @@
-{% extends "MoneydropFrontBundle:Default:layout.html.twig" %}
-{% block title %}{{ parent() }} - {% endblock %}
+{% extends "::base.html.twig" %}
+{% block title %}{{ parent() }} - Paramètres{% endblock %}
 {% block script %}
-    {#<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">#}
     <script src="{{ asset('bundles/moneydropfront/js/jquery-1.11.2.js') }}"></script>
     <script src="{{ asset('bundles/moneydropfront/js/bootstrap.min.js') }}"></script>
 {% endblock %}
+
+{% block header %}{% endblock %}
 
 {% block body %}
     {{ include('@MoneydropFront/Default/menu.html.twig') }}

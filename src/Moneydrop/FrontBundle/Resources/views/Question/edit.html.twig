@@ -1,11 +1,12 @@
 {% extends ('@MoneydropFront/Default/layout.html.twig') %}
 
-{% block title %}{{ parent() }} - Question- Ajout{% endblock %}
+{% block title %}{{ parent() }} - Question - Edition{% endblock %}
 
 {% block body %}
+
     {{ parent() }}
 
-    <h2 class="text-info text-center">Ajouter une question</h2>
+    <h2 class="text-info text-center">Editer une question</h2>
 
     {{ include('@MoneydropFront/Question/form.html.twig') }}
 

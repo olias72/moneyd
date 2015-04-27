@@ -1,7 +1,10 @@
-{% extends ('::base.html.twig') %}
+{% extends ('@MoneydropFront/Default/layout.html.twig') %}
 {% block title %}{{ parent() }} - Liste des thèmes{% endblock %}
 
 {% block body %}
+
+    {{ parent() }}
+
     <div class="container well">
         <table class="table table-bordered">
             <caption>
@@ -16,15 +19,11 @@
 
             {% for theme in themes %}
                 <tr>
-                    <td>{{ theme.name }}</td>
-                    <td></td>
+                    <td>{{ theme.name|upper }}</td>
+                    <td>{{ theme.questions|length }}</td>
                 </tr>
             {% endfor %}
-                <tr>
-                    <td><a href="{{ path('moneydrop_front_add_theme') }}">Ajouter un thème</a></td>
-                </tr>
         </table>
-        <button><a href="{{ path('moneydrop_front_parameters') }}">Retour au menu</a></button>
     </div>
 {% endblock %}
 

@@ -12,13 +12,12 @@ class QuestionType extends AbstractType
         $builder
             ->add('name', null, array('label' => 'Intitulé de la question'))
             ->add('level', 'integer', array('label' => 'Niveau'))
-            ->add('responses', new ResponseType(), array('label' => 'Réponse'))
+            //->add('responses', new ResponseType(), array('label' => 'Réponse'))
             ->add('theme', 'entity', array(
                 'class'     => 'MoneydropFrontBundle:Theme',
                 'property'  => 'name',
-                'multiple'  => false
             ))
-            ->add('submit', 'submit');
+            ->add('submit', 'submit', array('label' => 'Confirmer'));
     }
 
     public function getName()

@@ -1,8 +1,11 @@
-{% extends ('::base.html.twig') %}
+{% extends ('@MoneydropFront/Default/layout.html.twig') %}
 
 {% block title %}{{ parent() }} - Liste des questions{% endblock %}
 
 {% block body %}
+
+    {{ parent() }}
+
     <div class="container well">
         <table class="table table-bordered">
             <caption>
@@ -20,13 +23,10 @@
                     <td>{{ question.name }}</td>
                     <td>{{ question.level }}</td>
                     <td>{{ question.theme.name }}</td>
+                    <td><a href="{{ path('moneydrop_front_edit_question', { 'id': question.id }) }}" class="text-primary">Editer</a></td>
                     <td><a href="{{ path('moneydrop_front_remove_question', { 'id': question.id }) }}" class="text-danger">Supprimer</a></td>
                 </tr>
             {% endfor %}
-                <tr>
-                    <td><a href="{{ path('moneydrop_front_add_question') }}">Ajouter une question</a></td>
-                </tr>
         </table>
     </div>
-    <button><a href="{{ path('moneydrop_front_parameters') }}">Retour au menu</a></button>
 {% endblock %}

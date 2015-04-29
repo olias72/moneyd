@@ -3,7 +3,9 @@
 {% block title %}{{ parent() }} - choix du thème{% endblock %}
 
 {% block body %}
-    <div class="container well">
+
+    {{ form(form) }}
+    {#<div class="container well">
         <h2>Choisissez un thème</h2>
         <form class=" well form-horizontal col-lg-6" role="form" method="post" action="">
             <div class="radio">
@@ -16,6 +18,6 @@
                 <button class="btn btn-primary pull-right" type="submit">Valider</button>
             </div>
         </form>
-    </div>
+    </div>#}
 {% endblock %}
 

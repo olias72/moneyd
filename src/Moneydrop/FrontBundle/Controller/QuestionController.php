@@ -11,6 +11,11 @@ use Symfony\Component\HttpFoundation\Request;
 
 class QuestionController extends Controller
 {
+    public function indexAction($data)
+    {
+        return $this->render('@MoneydropFront/Question/index.html.twig', array('theme' => $data));
+    }
+
     public function addAction(Request $request)
     {
         $formHandler = new QuestionHandler($this->createForm(new QuestionType(), new Question()), $request);

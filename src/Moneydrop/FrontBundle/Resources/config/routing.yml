@@ -2,9 +2,13 @@ moneydrop_front_homepage:
     path:     /
     defaults: { _controller: MoneydropFrontBundle:Default:index }
 
-moneydrop_front_game:
-    path:     /game
+moneydrop_front_game_theme:
+    path:     /theme
     defaults: { _controller: MoneydropFrontBundle:Theme:index }
+
+moneydrop_front_game_question:
+    path:     /question/{theme}
+    defaults: { _controller: MoneydropFrontBundle:Question:index }
 
 moneydrop_front_history:
     path:     /history

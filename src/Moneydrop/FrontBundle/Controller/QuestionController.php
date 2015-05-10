@@ -11,9 +11,9 @@ use Symfony\Component\HttpFoundation\Request;
 
 class QuestionController extends Controller
 {
-    public function indexAction($data)
+    public function indexAction(Request $request, $data)
     {
-        return $this->render('@MoneydropFront/Question/index.html.twig', array('theme' => $data));
+        return $this->render('@MoneydropFront/Question/index.html.twig', array('data' => $data));
     }
 
     public function addAction(Request $request)

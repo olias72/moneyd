@@ -7,7 +7,7 @@ moneydrop_front_game_theme:
     defaults: { _controller: MoneydropFrontBundle:Theme:index }
 
 moneydrop_front_game_question:
-    path:     /question/{theme}
+    path:     /question/{data}
     defaults: { _controller: MoneydropFrontBundle:Question:index }
 
 moneydrop_front_history:

@@ -12,4 +12,25 @@ use Doctrine\ORM\EntityRepository;
  */
 class ThemeRepository extends EntityRepository
 {
+    public function randomOne()
+    {
+        $id = rand(1, $this->count());
+
+        return $this
+            ->createQueryBuilder('c')
+            ->select('c.id')
+            ->where('c.id = '.$id)
+            ->getQuery()
+            ->getSingleScalarResult();
+    }
+
+    public function count()
+    {
+        return $this
+            ->createQueryBuilder('c')
+            ->select('count(c.id)')
+            ->getQuery()
+            ->getSingleScalarResult();
+    }
+
 }

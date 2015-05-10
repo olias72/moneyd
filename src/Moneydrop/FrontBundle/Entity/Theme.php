@@ -20,19 +20,19 @@ class Theme
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=50)
      */
-    private $name;
+    protected $name;
 
     /**
      * @ORM\OneToMany(targetEntity="Question", mappedBy="theme")
      */
-    private $questions;
+    protected $questions;
 
     public function __construct()
     {

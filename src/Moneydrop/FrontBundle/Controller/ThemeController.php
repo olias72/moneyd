@@ -18,16 +18,15 @@ class ThemeController extends Controller
     public function indexAction(Request $request)
     {
         //$repository = $this->getDoctrine()->getRepository('MoneydropFrontBundle:Theme');
-        //$theme1 = $repository->randomOne();
+        //$id1 = $repository->randomOne();
         //$theme2 = $repository->randomOne();
         //$id = rand(1, $this->count());
-        //$theme = $this
-        //->getDoctrine()
-        //->getRepository('MoneydropFrontBundle:Theme')
-        //->findByName();
-        ////shuffle($theme);
-        //$theme1 = $theme->getName();
-        //$theme2 = $theme[1]->getName();
+        $theme = $this->getDoctrine()
+            ->getRepository('MoneydropFrontBundle:Theme')
+            ->findAll();
+        shuffle($theme);
+        $id1 = $theme[0]->getId();
+        $id2 = $theme[1]->getId();
 
         //$form = $this->createFormBuilder()
         //    ->add('theme', 'choice', array('choices' => array('theme1' => $theme1, 'theme2' => $theme2, 'expanded' => true))
@@ -36,25 +35,34 @@ class ThemeController extends Controller
 
         //$repository = $this->getDoctrine()->getRepository('MoneydropFrontBundle:Theme');
 
+        //$id1 = round(rand(1, 8));
+
         $form = $this->createFormBuilder()
             ->add('theme', 'entity', array(
                 'class' => 'MoneydropFrontBundle:Theme',
                 'property' => 'name',
                 'expanded' => true,
-                'query_builder' => function(EntityRepository $er) {
+                'query_builder' => function(EntityRepository $er) use ($id1, $id2) {
                     return $er->createQueryBuilder('t')
                         ->where('t.id = :id1')
-                        //->orWhere('t.id = :id2')
-                        ->setParameters(array('id1' => rand(1, 8)));//, 'id2' => rand(1, 8)));
+                        ->orWhere('t.id = :id2')
+                        ->setParameters(array('id1' => $id1, 'id2' => $id2));
                 }))
             ->add('submit', 'submit')
             ->getForm();
 
         $form->handleRequest($request);
 
-        if($form->isValid())
+        var_dump($id1);
+        var_dump($id2);
+
+       if($form->isValid())
         {
+            print_r("IS VALID");
             $data = $form['theme']->getData()->getName();
+
+            //var_dump($data);
+
             return $this->redirect($this->generateUrl('moneydrop_front_game_question', array('data' => $data)));
         }
         return $this->render('MoneydropFrontBundle:Theme:index.html.twig', array('form' => $form->createView()));
